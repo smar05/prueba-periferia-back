@@ -34,10 +34,17 @@ public class UsuarioService {
 
     public Optional<Usuario> getUserByTipoDocumentoAndNumeroDocumento(TipoDocumentoEnum tipoDocumento,
             Long numeroDocumento) {
-        return this.users.stream()
+        // Validacion del tipo de documento
+        if (!(tipoDocumento == TipoDocumentoEnum.C || tipoDocumento == TipoDocumentoEnum.P))
+            return null;
+
+        // Filtrado de los usuarios
+        Optional<Usuario> user = this.users.stream()
                 .filter(usuario -> usuario.getTipoDocumento() == tipoDocumento
                         && usuario.getNumeroDocumento().equals(numeroDocumento))
                 .findFirst();
+
+        return user;
     }
 
 }
