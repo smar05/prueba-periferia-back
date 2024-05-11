@@ -32,6 +32,7 @@ public class UsuarioController {
         Optional<Usuario> usuario = this.usuarioService.getUserByTipoDocumentoAndNumeroDocumento(tipoDocumento,
                 numeroDocumento);
 
+        // Si se encuentra al usuario
         if (usuario.isPresent()) {
             return ResponseEntity.ok(usuario.get());
         } else {

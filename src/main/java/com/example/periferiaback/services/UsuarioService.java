@@ -17,6 +17,11 @@ public class UsuarioService {
         this.inicializarUsuarios();
     }
 
+    /**
+     * Se inicializan los usuarios con datos quemados
+     * 
+     * @private
+     */
     private void inicializarUsuarios() {
         this.users.add(
                 new Usuario(1L, "Juan", "Pablo", "Perez", "Sanchez", "123456789", "Calle 123", "Ciudad A",
@@ -28,10 +33,22 @@ public class UsuarioService {
                         87654321L));
     }
 
+    /**
+     * Se obtienen todos los usuarios
+     * 
+     * @return List<Usuario>
+     */
     public List<Usuario> getUsers() {
         return this.users;
     }
 
+    /**
+     * Obtener un usuario por tipo de docuemento y numero de documento
+     * 
+     * @param tipoDocumento
+     * @param numeroDocumento
+     * @return
+     */
     public Optional<Usuario> getUserByTipoDocumentoAndNumeroDocumento(TipoDocumentoEnum tipoDocumento,
             Long numeroDocumento) {
         // Validacion del tipo de documento
