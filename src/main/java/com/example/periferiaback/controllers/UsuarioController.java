@@ -16,8 +16,12 @@ import com.example.periferiaback.enums.TipoDocumentoEnum;
 import com.example.periferiaback.models.Usuario;
 import com.example.periferiaback.services.UsuarioService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController
 @RequestMapping("/usuarios")
+@Tag(name = "Api")
 public class UsuarioController {
     private static final Logger logger = LoggerFactory.getLogger(UsuarioController.class);
 
@@ -30,6 +34,7 @@ public class UsuarioController {
      * @return
      */
     @GetMapping("/getAll")
+    @Operation(summary = "Obtener todos los usuarios")
     public ResponseEntity<List<Usuario>> getUsuarios() {
         logger.info("Metodo GET para obtener todos los usuarios");
         return ResponseEntity.ok(usuarioService.getUsers());
@@ -44,6 +49,7 @@ public class UsuarioController {
      * @return
      */
     @GetMapping("/getByTipoDocumentoAndNumeroDocumento")
+    @Operation(summary = "Obtener un usuario por tipo de documento y numero de documento")
     public ResponseEntity<Usuario> getByTipoDocumentoAndNumeroDocumento(
             @RequestParam("tipoDocumento") TipoDocumentoEnum tipoDocumento,
             @RequestParam("numeroDocumento") Long numeroDocumento) {
