@@ -57,7 +57,7 @@ public class UsuarioController {
             logger.info("Se encontro el usuario");
             return ResponseEntity.ok(usuario.get());
         } else {
-            logger.info("No se encontro el usuario");
+            logger.error("No se encontro el usuario");
             return ResponseEntity.notFound().build();
         }
     }
