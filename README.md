@@ -11,6 +11,10 @@ Este proyecto consiste en un servicio HTTP, construida con Spring boot con Java 
 
 El backend se encarga de obtener los datos de un usuario en base a su tipo de documento y su numero de documento.
 
+## Docker
+
+Se implemento la imagen docker de este servidor en `https://hub.docker.com/repository/docker/smar05/periferia-back`
+
 ## Uso
 
 Una vez que el servidor están en ejecución, puedes acceder a la api en `http://localhost:8090/usuarios/`.
