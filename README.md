@@ -13,7 +13,7 @@ El backend se encarga de obtener los datos de un usuario en base a su tipo de do
 
 ## Docker
 
-Se implemento la imagen docker de este servidor en `https://hub.docker.com/repository/docker/smar05/periferia-back`
+Se implemento la imagen docker de este servidor en `https://hub.docker.com/r/smar05/periferia-back`
 
 ## Uso
 
